@@ -11,13 +11,31 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
 
 const recognition = new SpeechRecognition()
 
-// on start
-recognition.onstart = () => {
-    console.log("Voice Activated");
-}
+// speech button
 
-// on result
-recognition.onresult = (e) => {
-    console.log("done");
+talkBtn.addEventListener("click", () => {
+    // on start
+    recognition.onstart = () => {
+        console.log("Voice Activated");
+    }
+    
+    // on result
+    recognition.onresult = (e) => {
+        const current = e.resultIndex;
+    
+        const transcript = e.results[current][0].transcript
+    
+        myList.push(transcript)
+    
+    }
+  
 
-}
+    // renderList()
+})
+
+
+// speech button on start
+
+talkBtn.addEventListener("click", () => {
+    recognition.start()
+})
