@@ -28,9 +28,19 @@ talkBtn.addEventListener("click", () => {
         myList.push(transcript)
     
     }
-  
+
 
     // renderList()
+})
+
+saveBtn.addEventListener("click", () => {
+    if (inputEl.value === "") {
+        return alert("Can not submit an empty field")
+    } else {
+        myList.push(inputEl.value)
+    }
+
+    inputEl.value = ""
 })
 
 
