@@ -26,6 +26,8 @@ talkBtn.addEventListener("click", () => {
         const transcript = e.results[current][0].transcript
     
         myList.push(transcript)
+
+        localStorage.setItem("myList", JSON.stringify(myList))
     
         renderList()
     }
@@ -40,6 +42,8 @@ saveBtn.addEventListener("click", () => {
     }
 
     inputEl.value = ""
+
+    localStorage.setItem("myList", JSON.stringify(myList))
 
     renderList()
 })
