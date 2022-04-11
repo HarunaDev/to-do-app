@@ -27,10 +27,9 @@ talkBtn.addEventListener("click", () => {
     
         myList.push(transcript)
     
+        renderList()
     }
 
-
-    // renderList()
 })
 
 saveBtn.addEventListener("click", () => {
@@ -41,8 +40,25 @@ saveBtn.addEventListener("click", () => {
     }
 
     inputEl.value = ""
+
+    renderList()
 })
 
+// render list function
+function renderList() {
+    let listItems = ""
+
+    for (let i = 0; i < myList.length; i++) {
+        listItems += `
+        <li>${myList[i]}
+            <button id="delete-btn">Delete
+            </button>
+        </li>
+        `
+    }
+
+    olEl.innerHTML = listItems
+}
 
 // speech button on start
 
