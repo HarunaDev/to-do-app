@@ -5,6 +5,14 @@ const saveBtn = document.getElementById("save-btn")
 const olEl = document.getElementById("ol-el")
 const talkBtn = document.querySelector(".talk")
 
+// get items from local storage
+let listFromLocalStorage = JSON.parse( localStorage.getItem("myList") )
+
+if (listFromLocalStorage) {
+    myList = listFromLocalStorage
+    renderList()
+}
+
 // initialise speech recognition
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
@@ -27,6 +35,8 @@ talkBtn.addEventListener("click", () => {
     
         myList.push(transcript)
 
+
+        // save to local storage
         localStorage.setItem("myList", JSON.stringify(myList))
     
         renderList()
@@ -43,6 +53,8 @@ saveBtn.addEventListener("click", () => {
 
     inputEl.value = ""
 
+
+    // save to local storage
     localStorage.setItem("myList", JSON.stringify(myList))
 
     renderList()
