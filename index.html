@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO DO APP</title>
+    <meta name="description" content="This is a To-Do web application with speech to text feature.">
+    <title>To-Do-App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input id="input-el" type="text" placeholder="input text">
+    <div class="container">
+        <div class="header">
+            <h1>TO DO APP</h1>
+            <h3>to do application with speech to text feature.</h3>
+        </div>
+        <div class="top">
+            <input id="input-el" row="10" col="5" type="text" placeholder="input note" required>
 
-    <button id="save-btn">SAVE</button>
+            <button id="save-btn">SAVE</button>
+            <button class="talk">Talk</button>
+            <button class="delete-all">Clear</button>
+        </div>
 
-    <button class="talk">talk</button>
+        <div class="bottom">
+            <ol id="ul-el">
 
-    <ol id="ol-el">
-        
-    </ol>
+            </ol>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
