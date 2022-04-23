@@ -69,3 +69,38 @@ body {
     background: tomato;
     border: 1px solid tomato;
 }
+
+.container .bottom {
+    width: 250px;
+    margin-top: 50px;
+    /* border: 1px solid green; */
+}
+
+.bottom ol {
+    list-style-position: inside;
+    width: auto;
+}
+
+.bottom .todo {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #444;
+    padding: 10px 5px;
+    margin:0 5px 5px;
+}
+
+.todo li {
+    font-size: 20px;
+    width: auto;
+}
+
+.todo .delete-btn {
+    background: tomato;
+    border: 1px solid tomato;
+}
+
+.fa-trash {
+    pointer-events: none;
+}
