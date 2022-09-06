@@ -92,19 +92,19 @@ function saveButton(event){
 
 // delete buttton function
 function deleteButton(e){
-    const item = e.target
+    const item = e.target;
     //delete button
     if(item.classList[0] === "delete-btn"){
         const task = item.parentElement
         deleteTodoItems(task)
         task.remove()
-    }
-}
+    };
+};
 
 // save items to local storage
 function saveTodoItems(todo) {
     // check local storage for items
-    let todos
+    let todos;
     localStorage.getItem("todos") === null ? todos = []
         :todos = JSON.parse(localStorage.getItem("todos"));
     todos.push(todo)
@@ -114,15 +114,11 @@ function saveTodoItems(todo) {
 // get items from local storage
 function getTodoItems(){
     // check local storage for items
-    let todos
-    if(localStorage.getItem("todos") === null){
-        todos = []
-    }else{
-        todos = JSON.parse(localStorage.getItem("todos"))
-    }
+    let todos;
+    localStorage.getItem("todos") === null ? todos = []
+        :todos = JSON.parse(localStorage.getItem("todos"));
     // loop through each item
     todos.forEach(function(todo){
-
     // create to do div
         const todoDiv = document.createElement("div")
         todoDiv.classList.add("todo")
@@ -147,7 +143,7 @@ function getTodoItems(){
 // delete items from local storage
 function deleteTodoItems(todo){
     // check local storage for items
-    let todos
+    let todos;
     localStorage.getItem("todos") === null ? todos = []
         :todos = JSON.parse(localStorage.getItem("todos"));
 
