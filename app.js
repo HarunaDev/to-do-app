@@ -62,9 +62,7 @@ function saveButton(event){
     // if user submits an empty string
     if (inputEl.value === "") {
         return alert("can not submit empty text")
-    } else {
-        
-    }
+    };
 
     // create to do div
     const todoDiv = document.createElement("div")
@@ -150,17 +148,14 @@ function getTodoItems(){
 function deleteTodoItems(todo){
     // check local storage for items
     let todos
-    if(localStorage.getItem("todos") === null){
-        todos = []
-    }else{
-        todos = JSON.parse(localStorage.getItem("todos"))
-    }
+    localStorage.getItem("todos") === null ? todos = []
+        :todos = JSON.parse(localStorage.getItem("todos"));
 
     const todoIndex = todo.children[0].innerText
     todos.splice(todos.indexOf(todoIndex), 1)
 
-    localStorage.setItem("todos", JSON.stringify(todos))
-}
+    localStorage.setItem("todos", JSON.stringify(todos));
+};
 
 // speech button
 talkBtn.addEventListener("click", () => {
