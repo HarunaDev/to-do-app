@@ -95,11 +95,8 @@ function saveButton(event){
 // delete buttton function
 function deleteButton(e){
     const item = e.target
-
-    
     //delete button
     if(item.classList[0] === "delete-btn"){
-        
         const task = item.parentElement
         deleteTodoItems(task)
         task.remove()
@@ -110,14 +107,11 @@ function deleteButton(e){
 function saveTodoItems(todo) {
     // check local storage for items
     let todos
-    if(localStorage.getItem("todos") === null){
-        todos = []
-    }else{
-        todos = JSON.parse(localStorage.getItem("todos"))
-    }
+    localStorage.getItem("todos") === null ? todos = []
+        :todos = JSON.parse(localStorage.getItem("todos"));
     todos.push(todo)
     localStorage.setItem("todos", JSON.stringify(todos))
-}
+};
 
 // get items from local storage
 function getTodoItems(){
